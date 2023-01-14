@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "2191562_add_circle_cross_increase_plus_icon.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "2191562_add_circle_cross_increase_plus_icon 1.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "2191562_add_circle_cross_increase_plus_icon 2.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
