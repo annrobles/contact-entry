@@ -40,6 +40,9 @@
                                 <rect key="frame" x="165" y="262" width="61" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Save"/>
+                                <connections>
+                                    <action selector="saveTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LTf-ym-jPR"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -63,6 +66,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="EHi-5D-wK3"/>
+                    <connections>
+                        <outlet property="email" destination="dqq-ox-v62" id="iJN-vB-628"/>
+                        <outlet property="firstName" destination="Hgs-EN-YwN" id="GIh-6k-fBX"/>
+                        <outlet property="lastName" destination="Sl5-SK-BAY" id="dXh-Me-oO1"/>
+                        <outlet property="phoneNumber" destination="qkD-QS-p9h" id="2dx-O3-NhV"/>
+                        <outlet property="saveButton" destination="fpk-sN-F0f" id="74d-XQ-p1L"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -87,26 +97,29 @@
         <!--Contact Entry App-->
         <scene sceneID="KYa-KY-BLo">
             <objects>
-                <viewController id="LUZ-2l-DXR" customClass="ViewController" customModule="contact_entry" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="LUZ-2l-DXR" customClass="ViewController" customModule="contact_entry" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VlA-s2-L8Z">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4hG-Hl-snd">
-                                <rect key="frame" x="20" y="186" width="350" height="128"/>
+                                <rect key="frame" x="0.0" y="186" width="390" height="569"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="PmN-ll-ND1"/>
+                                    <constraint firstAttribute="height" constant="569" id="PmN-ll-ND1"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="LUZ-2l-DXR" id="W8l-5q-D4i"/>
+                                    <outlet property="delegate" destination="LUZ-2l-DXR" id="qef-67-xdN"/>
+                                </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xC0-F2-DcG">
-                                <rect key="frame" x="124" y="763" width="67" height="57"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="4203017_archive_big data_document_magnifying glass_search_icon"/>
-                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rwi-Tf-U7D">
+                                <rect key="frame" x="20" y="112" width="350" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Bn-8q-Xrq">
-                                <rect key="frame" x="199" y="763" width="67" height="57"/>
+                                <rect key="frame" x="162" y="763" width="67" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="plus_icon"/>
@@ -114,20 +127,15 @@
                                     <action selector="addTapped:" destination="LUZ-2l-DXR" eventType="touchUpInside" id="dsr-Ib-EeF"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rwi-Tf-U7D">
-                                <rect key="frame" x="20" y="112" width="350" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eOj-95-Icf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="4hG-Hl-snd" firstAttribute="leading" secondItem="eOj-95-Icf" secondAttribute="leading" constant="20" id="5Hz-Td-exC"/>
                             <constraint firstItem="4hG-Hl-snd" firstAttribute="top" secondItem="rwi-Tf-U7D" secondAttribute="bottom" constant="40" id="GE2-eQ-0q4"/>
+                            <constraint firstItem="4hG-Hl-snd" firstAttribute="leading" secondItem="eOj-95-Icf" secondAttribute="leading" id="MKB-hw-bWM"/>
                             <constraint firstItem="rwi-Tf-U7D" firstAttribute="leading" secondItem="eOj-95-Icf" secondAttribute="leading" constant="20" id="coD-SK-Pni"/>
+                            <constraint firstItem="eOj-95-Icf" firstAttribute="trailing" secondItem="4hG-Hl-snd" secondAttribute="trailing" id="fA0-Sx-bfL"/>
                             <constraint firstItem="rwi-Tf-U7D" firstAttribute="top" secondItem="eOj-95-Icf" secondAttribute="top" constant="21" id="uc8-l0-N9h"/>
-                            <constraint firstItem="eOj-95-Icf" firstAttribute="trailing" secondItem="4hG-Hl-snd" secondAttribute="trailing" constant="20" id="wMH-c3-1dL"/>
                             <constraint firstItem="eOj-95-Icf" firstAttribute="trailing" secondItem="rwi-Tf-U7D" secondAttribute="trailing" constant="20" id="zbV-Gj-p9p"/>
                         </constraints>
                     </view>
@@ -137,17 +145,15 @@
                     <connections>
                         <outlet property="addButton" destination="4Bn-8q-Xrq" id="TXJ-Wt-h7N"/>
                         <outlet property="contactTable" destination="4hG-Hl-snd" id="QEK-X1-Iwf"/>
-                        <outlet property="searchButton" destination="xC0-F2-DcG" id="iw0-og-FT8"/>
                         <outlet property="searchText" destination="rwi-Tf-U7D" id="SRZ-Q7-uxe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5OU-io-ZOQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1037" y="-82"/>
+            <point key="canvasLocation" x="-1038.4615384615383" y="-82.464454976303315"/>
         </scene>
     </scenes>
     <resources>
-        <image name="4203017_archive_big data_document_magnifying glass_search_icon" width="42.666667938232422" height="42.666667938232422"/>
         <image name="plus_icon" width="42.666667938232422" height="42.666667938232422"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		70620A16297321CE00229042 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70620A15297321CE00229042 /* AddViewController.swift */; };
-		70620A18297328A000229042 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70620A17297328A000229042 /* Contact.swift */; };
+		70620A1E2973318800229042 /* Contact.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 70620A1C2973318800229042 /* Contact.xcdatamodeld */; };
+		70620A312973422800229042 /* Contact+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70620A2F2973422800229042 /* Contact+CoreDataClass.swift */; };
+		70620A322973422800229042 /* Contact+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70620A302973422800229042 /* Contact+CoreDataProperties.swift */; };
 		70ECB114296CF8130061BE39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ECB113296CF8130061BE39 /* AppDelegate.swift */; };
 		70ECB116296CF8130061BE39 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ECB115296CF8130061BE39 /* SceneDelegate.swift */; };
 		70ECB118296CF8130061BE39 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ECB117296CF8130061BE39 /* ViewController.swift */; };
@@ -39,7 +41,9 @@
 
 /* Begin PBXFileReference section */
 		70620A15297321CE00229042 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
-		70620A17297328A000229042 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		70620A1D2973318800229042 /* Contact.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Contact.xcdatamodel; sourceTree = "<group>"; };
+		70620A2F2973422800229042 /* Contact+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+CoreDataClass.swift"; sourceTree = "<group>"; };
+		70620A302973422800229042 /* Contact+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		70ECB110296CF8130061BE39 /* contact-entry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "contact-entry.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		70ECB113296CF8130061BE39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		70ECB115296CF8130061BE39 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 				70ECB11C296CF8150061BE39 /* Assets.xcassets */,
 				70ECB11E296CF8150061BE39 /* LaunchScreen.storyboard */,
 				70ECB121296CF8150061BE39 /* Info.plist */,
+				70620A1C2973318800229042 /* Contact.xcdatamodeld */,
 			);
 			path = "contact-entry";
 			sourceTree = "<group>";
@@ -135,7 +140,8 @@
 		70ECB143296CF8C90061BE39 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				70620A17297328A000229042 /* Contact.swift */,
+				70620A2F2973422800229042 /* Contact+CoreDataClass.swift */,
+				70620A302973422800229042 /* Contact+CoreDataProperties.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -290,8 +296,10 @@
 			files = (
 				70ECB118296CF8130061BE39 /* ViewController.swift in Sources */,
 				70ECB114296CF8130061BE39 /* AppDelegate.swift in Sources */,
-				70620A18297328A000229042 /* Contact.swift in Sources */,
+				70620A322973422800229042 /* Contact+CoreDataProperties.swift in Sources */,
+				70620A1E2973318800229042 /* Contact.xcdatamodeld in Sources */,
 				70620A16297321CE00229042 /* AddViewController.swift in Sources */,
+				70620A312973422800229042 /* Contact+CoreDataClass.swift in Sources */,
 				70ECB116296CF8130061BE39 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -628,6 +636,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		70620A1C2973318800229042 /* Contact.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				70620A1D2973318800229042 /* Contact.xcdatamodel */,
+			);
+			currentVersion = 70620A1D2973318800229042 /* Contact.xcdatamodel */;
+			path = Contact.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 70ECB108296CF8130061BE39 /* Project object */;
 }
