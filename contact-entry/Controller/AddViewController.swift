@@ -22,12 +22,19 @@ class AddViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let oneTap = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        view.addGestureRecognizer(oneTap)
+        
         if contact != nil {
             firstName.text = contact?.firstName
             lastName.text = contact?.lastName
             phoneNumber.text = contact?.phoneNumber
             email.text = contact?.email
         }
+    }
+    
+    @objc func hideKeyboard(sender: UITapGestureRecognizer) {
+        view.endEditing(true)
     }
 
     @IBAction func saveTapped(_ sender: Any) {
@@ -37,10 +44,12 @@ class AddViewController: UIViewController {
             newContact.lastName = lastName.text
             newContact.phoneNumber = phoneNumber.text
             newContact.email = email.text
+            newContact.fullName = "\(firstName.text ?? "") \(lastName.text ?? "")"
         }
         else {
             contact?.firstName = firstName.text
             contact?.lastName = lastName.text
+            contact?.fullName = "\(firstName.text ?? "") \(lastName.text ?? "")"
             contact?.phoneNumber = phoneNumber.text
             contact?.email = email.text
         }

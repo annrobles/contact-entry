@@ -27,6 +27,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         contactTable.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        searchText.addTarget(self, action: #selector(ViewController.textFieldDidChange(_:)), for: .editingChanged)
+        
+        let oneTap = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        view.addGestureRecognizer(oneTap)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,10 +39,21 @@ class ViewController: UIViewController {
         fetchContact()
     }
     
+    @objc func hideKeyboard(sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
+    
     func fetchContact() {
         do {
-            self.contacts = try context.fetch(Contact.fetchRequest())
+            let request = Contact.fetchRequest() as NSFetchRequest<Contact>
             
+            if searchText.text != "" {
+                let predicate = NSPredicate(format: "fullName CONTAINS %@", searchText.text!)
+                request.predicate = predicate
+            }
+            
+            self.contacts = try context.fetch(request)
+        
             DispatchQueue.main.async {
                 self.contactTable.reloadData()
             }
@@ -46,6 +61,10 @@ class ViewController: UIViewController {
         catch {
             
         }
+    }
+    
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        fetchContact()
     }
 }
 
