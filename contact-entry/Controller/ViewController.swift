@@ -31,6 +31,7 @@ class ViewController: UIViewController {
         
         let oneTap = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         view.addGestureRecognizer(oneTap)
+        oneTap.cancelsTouchesInView = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
